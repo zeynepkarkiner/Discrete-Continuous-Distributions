@@ -1,3 +1,3 @@
-# Discrete-Distributions
+# Discrete & Continous Distributions
  
 -to do
