@@ -1,0 +1,153 @@
+# ABOUT DIRECTORY
+ getwd() : Shows the current directory (working directory)
+ setwd("") : Setting a new directory to work on
+ 
+# ABOUT R
+  help(): General support of while using R
+  demo(graphs): It shows the demo of graphs etc.
+  scan() : Enter numbers then it display how many numbers that are entered. Only real numbers are allowed not strings.
+  R has a speacial library which includes severeal datasets -> datasets:: {example dataset}
+  summary() : Summary of given dataset, it returns mean, median, quartile, min and max value from each column.
+  
+# MATH
+ round(operation, # of digits to show) : It takes an operation and display the pointed number of digits
+ ceiling(integer) : Round the number to the greatest number after itself
+ floor(integer) : Round the number to the lowest number after itself
+ options(digits) : Digits parameter determines the significant number
+ 
+  # MATH FUNCTIONS
+  sqrt(number) : Square root of the number
+  sum(list of numbers) : Returns summation of the list of numbers
+
+# VARIABLES
+ * It can be implemented by using '=' or '<-'
+ * To display all variables use 'ls()' or 'objects()' in the console
+ 
+# STRING FUNCTIONS
+ rep("string", times) : Accoriding to the times parameter it replicates the string
+ 
+# DATA TYPES
+ * R has numeric, double, integer, complex, character and logical data types. 
+ * class(x), typeof(x) : To determine the type of the variable
+ * str() : Displays the type of the variable and its content
+  ->The number is assigned 'numeric' by default. But to change as an 'integer' put 'L' on the right. The other way of changing its data type can be using by 'as.integer(x)' function.
+
+# VECTORS
+ *A vector describes that elements are all stored in the same data type 
+ c() : creates a vector
+ : operator: 
+    Ex. usage; 
+      x4 <- 1:6, x4 = 1 2 3 4 5 6
+      
+# SEQUENCES
+ seq(from, to, by) : Create a sequence with the specified order
+  Ex. usage; 
+    seq(3,21,3) ; 3 6 9 12 15 18 21
+    
+# STATISTICS FUNCTIONS
+ rnorm(n, mean, standard derivation) : simulates random variates having a specified normal distribution.
+ 
+# INDICES
+ * While using indices there many ways to reach the specific element
+  1) data[4] -> Fourth element in the data array (not first element = [0])
+  2) data[1:3] -> Display first to third element
+  3) data[c(2,3,4)] -> In data array, pick second, third and fourth elements and make a vector
+  4) x = data[-2] -> x, will be a vector which is has all elements in the data array except second element
+  5) x = data[-(1:5)] -> x, will be a vector which starts at the sixth element to the last element (except 1-5)
+ * Finding indices in objects can be done with the use of '$' symbol. (data$price)
+ * The use of $ symbol does not always be practical, instead there is a function called 'attach(table)' which is saves the table into the memory. After 
+ saving, you can reach the column with just typing its name. On the other hand, detach(table) is removes the table from the memory.
+ 
+ names(table) : Returns the header names located in the table
+ 
+# MATRICES
+   matrix(n(array), nrow , ncol, byrow = F ) : According to the # of rows and columns create a maatrix with the given array,
+   by default matrix is created with column based, but if you make byrow parameter equals 'T' matrix will be created in row 
+   based.
+   
+   Example (create a fancy matrix (3x3));
+    nums <- 1:9
+    rows = c("row1","row2","row3")
+    cols = c("col1", "col2","col3")
+    m1 <- matrix(nums, nrow= 3, ncol = 3, byrow = T, dimnames = list(rows,cols))
+    
+    *If there is an existing vector, then you add dimension into an array you will have a matrix. This can be done via using
+    dim(vector) function. 
+        Ex. usage;
+        a <- 1:15
+        dim(a) <- c(3,5)
+        
+    * It is possible to bind existing vectors or matrices.
+      rbind(vector or matrices) : row based binding
+      cbind(vector or matrices) : column based binding
+
+# ARRAYS
+ *Arrays are considered as generalized matrices
+  Ex. Usage;
+    x1 <- 1:16
+    arr1 <- array(x1, c(5,2,3)) : It creates an array but matrix based (row = 5, col = 2, starting from 1 to 16 and fill the
+    matrix 3 times)
+
+# DATA FRAMES
+ *Storing different kinds of data types is handle with the use of 'Data Frames'. Columns should be equal length. In the list
+ ,there may be diffrent lengths. For instance, 'lm()' function carry the regression analysis into a list and then display it.
+  data.frame() : Creates a data frame. (It is really important that column lengths should be equal)
+  edit(smt) : To edit a data frame, vector or etc. 
+
+# DATA READING
+ For reading data there are many ways to read from different sources. If the extention is .txt, .dat, or .csv ; 
+ Here are some example functions; read.table(), read.csv(), read.delim()
+ 
+ # TXT FILES READING
+  * read.csv() function can be use in this case.
+ # CSV FILES READING
+  * read.csv() function can be use in this case.
+ # EXCEL FILES READING 
+  * .xlsx can be converted into the .csv; read.csv() function can be use in this case. Or read.xlsx() function can be used.
+  
+# DATA SAVING
+ * Saving as a file can be constructed in two ways; write.table() and write.csv()
+
+# MEASURES OF CENTRAL TENDENCY
+  mean() : Returns the average of given column, while using indeces can be considered (women$height)
+  median() : Returns the median of given numbers.
+
+# MEASURES OF DISPERSION 
+  sd() : Stands for standard derivation of given numbers
+  var() : Variance of given numbers
+  quantile(empty or a double number) : Quantile of given numbers (It displays Q1, Q2 (median), Q3 and Q4), and also displays minimum and maximum value of
+  given numbers. Double number parameter indicates that (for instance,0.25), it returns Q1 value.
+
+# FREQUENCY TABLES
+  table(): cretaes a frequency table which specified columns.
+    Ex. Usage; freqTableReg <- table(SampleData$Region) ; It creates a frequency table which is based on region column, the output will be 3 regions such as
+    central, east and west with their corresponding numbers. This function is very useful for the categorical attributes. It also ease the find the mod 
+    value(most repeated data)
+    
+  sort(): Sorting the values in onder (easy to determine min and max value)
+
+# GRAPHS
+
+  # HISTOGRAM
+  hist(): Histogramic graph of specified column. Each rectangle is corresponds to occurence of the data
+  Name of axes can be written as; x axes: xlab, title: main, and also grouping may be divided into specific number such as 4
+  (use hist(data, breaks = 4)) in breaks parameter; it also ease to use c() function, by implementing this, frequence 
+  intervals are written in specifically, and also set the freq parameter true.
+  
+  # SCATTERPLOT
+  plot(x,y): It the graph between two variables and their relationships. X values are displayes on the x-axes, and the y 
+  values are displayes on the y-axes. Additional parameters are, xlab, ylab and main which are similar with the histogram 
+  function parameters. pch parameter, changes the symbol of the data (default is square(1))
+  
+  # BOXPLOT
+   boxplot() : It displays a box plot. Also displays outrange values which are shown in the little circles. 
+   It is easy to understand distribution type, indicates median , Q1, Q2 (median), Q3 values. If the box is located in the
+   middle of the line and median line is located in the middle of the box it means that, symmetrical distribution. However, 
+   if the box and median line located in the right or left side, then it means there are some positive and negative skewes.
+
+# BERNOULLI DISTRIBUTION
+  
+  dbern(1 or 0, success rate): It calculates the probablity function's value for the given x (gives the density)
+  pbern(): gives the distribution function (cumulative)
+  rbern(int, probablity): Generate random deviates
+  
