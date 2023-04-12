@@ -150,4 +150,11 @@
   dbern(1 or 0, success rate): It calculates the probablity function's value for the given x (gives the density)
   pbern(): gives the distribution function (cumulative)
   rbern(int, probablity): Generate random deviates
+
+# BINOMIAL DISTRIBUTION
+
+  dbinom(): It calculates the probablity function's value for the given success rate (gives the density)
+  pbinom(): gives the distribution function (cumulative)
+  rbinom(int, probablity): Generate random deviates
+
   
