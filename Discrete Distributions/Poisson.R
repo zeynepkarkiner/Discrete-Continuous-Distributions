@@ -2,7 +2,7 @@
 
 # An example;
 # An average of 16 customers come to a bank within 10 minutes. 
-# The probablity of 12 customers in 10 minutes
+# The probability of 12 customers in 10 minutes
 dpois (12,16)
 
 # Above 8 customers in 10 minutes
